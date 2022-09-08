@@ -24,4 +24,6 @@
     echo (int) false.'<br>';
     echo (bool) 500 .'<br>';
 //Constants
-    
+    const MAX_VALUE = 100;
+    echo MAX_VALUE.'<br>';
+//Operators
