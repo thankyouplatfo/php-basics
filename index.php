@@ -54,23 +54,23 @@ const BR = '<br>';
     $b = 2;
     if ($a > $b) {
         # code...
-        echo "<br>"."$a bigger theme $b"."<br>";
+        echo BR."$a bigger theme $b".BR;
     }
 
     if ($a < $b) {
         # code...
-        echo "<br>"."$a < $b"."<br>"; 
+        echo BR."$a < $b".BR; 
     } else {
         # code...
-        echo "<br>"."$a > $b"."<br>";
+        echo BR."$a > $b".BR;
     }
     //ifelse
     if ($a < $b) {
         # code...
-        echo "<br>"."$a < $b"."<br>"; 
+        echo BR."$a < $b".BR; 
     } else if($a > $b) {
         # code...
-        echo "<br>"."$a > $b"."<br>";
+        echo BR."$a > $b".BR;
     }
     //switch
     $i = 5;
@@ -94,7 +94,7 @@ const BR = '<br>';
             break;
         case 5:
             # code...
-            echo "<br>" . 5 . "<br>";
+            echo BR . 5 . BR;
             break;
         
         default:
@@ -103,12 +103,38 @@ const BR = '<br>';
             break;
     }
     // Ternary Operator
-    echo $a > $b ? "<br>"."OK"."<br>" : "<br>"."KO"."<br>";
+    echo $a > $b ? BR."OK".BR : BR."KO".BR;
     //isset
-    echo "<br>".isset($a)."<br>";
+    echo BR.isset($a).BR;
         //define
         echo defined("MAX_VALUE") ? 'OK' : 'KO';
     //Null Coalescing Operator
     //$username = 'Moataz';
     $age = 27;
-    echo  $username ??  "<br>" . $age . "<br>" ?? "<br>" . 'nobody';
+    echo  $username ??  BR . $age . BR ?? BR . 'nobody';
+//loops
+    //while و do...while
+    $i = 1;
+    while ($i <= 10)
+        echo BR. $i++ .BR;  
+    BR;
+     $y = 11;
+    do {
+        # code...
+        echo BR. $y++ .BR;
+    } while ($y <= 10);
+    //for
+    for ($i=0; $i <= 10; $i++) { 
+        # code...
+        echo BR.$i.BR;
+    }
+        //EXSAMPLE
+        for ($i=0 , $y=0 ;  $i <= 10 , $y <= 20 ; print $y++ .BR, $i++);
+    //break and continue
+        $i = 1;
+        while ($i <= 10)
+        {
+            $i++;
+            if ($i % 2) continue;
+            echo BR.$i.BR;
+        }
