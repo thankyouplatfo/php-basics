@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\map;
+
 const BR = '<br>';
 //Print
     echo 'Hello World' .BR;
@@ -138,3 +141,92 @@ const BR = '<br>';
             if ($i % 2) continue;
             echo BR.$i.BR;
         }
+//Arrays
+    $names = ['moataz','ablorhman','almashkli']; 
+    print_r($names);
+    echo BR;
+    echo $names[0];
+    //add to arr
+    echo BR;
+    $names[] = "Ahmad";
+    print_r($names);
+    //edit in arr
+    echo BR;
+    $names[0] = "mahde";
+    print_r($names);
+    //delete from arr
+    echo BR;
+    unset($names[3]);
+    print_r($names);
+    //Associative Arrays
+        $pers = [
+            [
+                'name' => 'moataz',
+                'age' => 27,
+                'address' => 'makkh',
+                'sik' => [
+                    'HTML',
+                    'CSS',
+                    'js',
+                    'SQL',
+                    'PHP',
+                    'Laravel'
+                    ]
+                ],
+                [
+                    'name' => 'mahde',
+                    'age' => 19,
+                    'address' => 'makkh',
+                    'sik' => [
+                    'electrical engineering',
+                    'Car mechanics',
+                    ]
+                ]
+        ];
+        echo BR.$pers[0]['name'].BR;
+        echo BR.$pers[0]['age'].BR;
+        echo BR.$pers[0]['address'].BR;
+        echo BR.print_r($pers[0]['sik']).BR;
+    //Traversing arrays using loops
+    //By for 
+        $count = count($pers);
+        for ($i=0; $i < $count; $i++) { 
+            # code...
+            echo BR. $pers[$i]['name'] .'-'. $pers[$i]['age'] .BR;
+        }
+    //By while
+        $a = $count-1 ;
+        while ($a >= 0) {
+            # code...
+            echo BR. $pers[$a]['name'] .'-'. $pers[$a]['age'] .BR;
+            $a--;
+
+        }
+    //foreach
+        foreach ($pers as $per) {
+            # code...
+            echo BR. $per['name'] .'-'. $per['age'] .BR;
+        }
+        //
+        foreach ($pers as $key => $per) {
+            # code...
+            echo BR.$key.BR . $per['name'] .'-'. $per['age'] .BR;
+        }
+//fun arr
+    $arr = ['moataz','abdolrhman','ebrahim'];
+    //count
+    echo count($arr).BR;
+    //is_array
+    echo is_array($arr).BR;        
+    //explode
+    $insults = 'insult1 insult2 insult3';
+    BR.print_r(explode(' ',$insults)).BR;
+    //implode
+    echo BR;
+    echo implode('-',$arr) .BR;
+    //array_merge
+    $arr1 = [1,2,3];
+    $arr2 = [4,5,6];
+    $marge = array_merge($arr1,$arr2);
+    print_r($marge); 
+
