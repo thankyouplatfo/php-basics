@@ -212,21 +212,128 @@ const BR = '<br>';
             # code...
             echo BR.$key.BR . $per['name'] .'-'. $per['age'] .BR;
         }
-//fun arr
-    $arr = ['moataz','abdolrhman','ebrahim'];
-    //count
-    echo count($arr).BR;
-    //is_array
-    echo is_array($arr).BR;        
-    //explode
-    $insults = 'insult1 insult2 insult3';
-    BR.print_r(explode(' ',$insults)).BR;
-    //implode
-    echo BR;
-    echo implode('-',$arr) .BR;
-    //array_merge
-    $arr1 = [1,2,3];
-    $arr2 = [4,5,6];
-    $marge = array_merge($arr1,$arr2);
-    print_r($marge); 
+    //fun arr
+        $arr = ['moataz','abdolrhman','ebrahim'];
+        //count
+        echo count($arr).BR;
+        //is_array
+        echo is_array($arr).BR;        
+        //explode
+        $insults = 'insult1 insult2 insult3';
+        BR.print_r(explode(' ',$insults)).BR;
+        //implode
+        echo BR;
+        echo implode('-',$arr) .BR;
+        //array_merge
+        $arr1 = [1,2,3];
+        $arr2 = [4,5,6];
+        $marge = array_merge($arr1,$arr2);
+        print_r($marge); 
+//functions
+        //fun
+            echo BR;
+            function foo()
+            {
+                # code...
+                echo "HI FUN IN PHP LANG";
+            }
+            echo BR;
+            foo();
 
+            function print_num(){
+                $a = 0;
+                while ($a <= 10) {
+                    # code...
+                    echo $a++;
+                }
+                function print_char(){
+                    echo 'ABCD';
+                }
+            }
+            echo BR;
+            print_num();
+            echo BR;
+            print_char();
+        //Parameters
+        echo BR;
+            function print_name($name){
+                echo "my name is {$name}";
+            }
+            print_name('moataz');
+        echo BR;
+            function is_ood($num_ood){
+                if($num_ood % 2)
+                    echo $num_ood;
+                else
+                    echo 'your number not ood';
+            }
+            is_ood(3);   
+        echo BR;
+            function sum($num1,$num2){ 
+                echo $num1 + $num2;
+            };
+            sum(5,5);
+        //arguments
+        echo BR;
+            function sumByArguments(...$numbers)
+            {
+                # code...
+                //print_r($numbers);
+                $acc = 0;
+                foreach($numbers as $num) $acc += $num;
+                echo $acc; 
+            }
+            $numArr = [1,2,3,4,5,6,7,8,9,10]; 
+            sumByArguments(...$numArr).BR;
+        //return 
+        echo BR;
+            function is_ood_by_bool($num){
+
+                if($num % 2) return true;
+                
+                return false;
+            }
+            echo BR.  is_ood_by_bool(1)  .BR;
+        //Closure Functions
+        echo BR;
+            $hello = function(){
+                echo 'hi Closure Functions';
+            };
+            BR. $hello() .BR;
+            //exsamlpe Clo fun
+            $fun = function($val){
+                return $val * 2;
+            };
+
+            print_r(
+                array_map($fun,$numArr)
+            );
+        //Arrow Function (PHP >= 7.4) 
+        echo BR;
+            $afun = fn($num) => $num * 2;
+            BR.
+            print_r(
+                array_map($afun,$numArr)
+            )
+            .BR;
+        //String functions
+        echo BR;
+                $str = "Esse eiusmod ut aliqua occaecat laboris labore magna culpa eu ex aliqua nostrud id labore. Voluptate consectetur ea
+                exercitation aliquip veniam est ex deserunt id sunt est dolor. Commodo enim mollit officia culpa deserunt aute dolore
+                aliqua laborum quis culpa sint.Minim nostrud anim et culpa ut irure fugiat aliqua aliqua commodo officia. Dolor est et
+                sunt sit labore magna anim mollit. Pariatur quis duis proident tempor eu.";
+                //tests fun str
+                echo BR;
+                echo strlen($str);
+                echo BR;
+                echo strtolower($str);
+                echo BR;
+                echo strtoupper($str);
+                echo BR;
+                echo strpos($str,"p");
+                echo BR;
+                echo str_replace('aliqua',' PHP ',$str);
+                echo BR;
+                echo substr($str,0,15);
+                echo BR;
+                
